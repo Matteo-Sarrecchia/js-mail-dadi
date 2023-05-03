@@ -2,33 +2,46 @@
 // Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 // variabili globali
-const container = document.getElementById("container")
-
+const risultato = document.getElementById("risultato");
+const giocatore = document.getElementById("giocatore");
+const computer = document.getElementById("computer");
 
 // generare numero random giocatore
-const numComputer = Math.floor(Math.random()*7);
-console.log(numComputer);
-
-
-// generare numero random computer
 const numGiocatore = Math.floor(Math.random()*7);
 console.log(numGiocatore);
+const squareGiocatore = document.createElement("div")
+giocatore.append(squareGiocatore);
+squareGiocatore.append("Numero giocatore  " + numGiocatore);
 
+// generare numero random computer
+const numComputer = Math.floor(Math.random()*7);
+console.log(numComputer);
+const squareComputer = document.createElement("div")
+computer.append(squareComputer);
+squareComputer.append("Numero computer  " + numComputer);
+
+// condizione
 if (numComputer < numGiocatore) {
     console.log("Vittoria Giocatore")
-    const square = document.createElement("div")
-    container.append(square);
-    square.append("Winner")
+    const squareRisultato = document.createElement("span")
+    risultato.append(squareRisultato);
+    squareRisultato.append("Winner")
+    // aggiunta classe
+    squareRisultato.classList.add("vittoriaGiocatore");
 
-} if (numComputer > numGiocatore) {
+} else if (numComputer > numGiocatore) {
     console.log("Vittoria Computer")
-    const square = document.createElement("div")
-    container.append(square);
-    square.append("Loser")
+    const squareRisultato = document.createElement("span")
+    risultato.append(squareRisultato);
+    squareRisultato.append("Loser")
+    // aggiunta classe
+    squareRisultato.classList.add("vittoriaComputer");
 
-} if (numComputer == numGiocatore) {
+} else if (numComputer == numGiocatore) {
     console.log("Pareggio")
-    const square = document.createElement("div")
-    container.append(square);
-    square.append("Pareggio")
+    const squareRisultato = document.createElement("span")
+    risultato.append(squareRisultato);
+    squareRisultato.append("Pareggio")
+    // aggiunta classe
+    squareRisultato.classList.add("pareggio");
 }
