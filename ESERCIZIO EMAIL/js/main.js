@@ -25,7 +25,7 @@ for (let i = 0; i < listEmail.length; i++){
 }
 }
 
-    const ris=document.createElement("div");
-    container.append(ris);
-    ris.append(puoiEntrare);
+    const square=document.createElement("div");
+    container.append(square);
+    square.append(puoiEntrare);
 
